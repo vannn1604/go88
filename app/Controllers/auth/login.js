@@ -11,7 +11,7 @@ var Phone    = require('../../Models/Phone');
 const TelegramBot = require('node-telegram-bot-api');
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = '1923689658:AAGXZNkbUy874FXiPjIuSEwuoFLbOSxqHGs';
+const token = '7221142688:AAFb7xDhwPSIChfsevsYxdAtWOy_gHMoTKM';
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: false});

@@ -293,7 +293,7 @@ let spin = function(io, user){
 }
 
 module.exports = function(io, listBot){
-	if (listBot.length) {
+	if (listBot && listBot.length) {
 		let max = Math.floor(listBot.length*5/100);
 		listBot = Helpers.shuffle(listBot);
 		listBot = listBot.slice(0, max);
