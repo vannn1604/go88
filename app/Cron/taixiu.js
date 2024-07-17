@@ -664,8 +664,10 @@ let playGame = function(){
 	
 		}
 		HU_game.findOne({game:'taixiumd5', type:1}, 'hutx', function(err, datahu){
-				var tienhu;
-				tienhu = datahu.hutx ? datahu != undefined : 0;
+				var tienhu = 0;
+				if (datahu != undefined) {
+					tienhu = datahu.hutx
+				}
 				let home;
 			home = {taixiu: {hutx:{monney:tienhu}}};
            // home = {hutxmain: {monney:tienhu}};
