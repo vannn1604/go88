@@ -81,16 +81,18 @@ let botchat = function(){
 }
 let GetTop = function(){
 	TaiXiu_User.find({'totall':{$gt:0}}, 'totall uid', {sort:{totall:-1}, limit:10}, function(err, results) {
-		Promise.all(results.map(function(obj){
-			return new Promise(function(resolve, reject) {
-				UserInfo.findOne({'id': obj.uid}, function(error, result2){
-					resolve({name:!!result2 ? result2.name : '', bet:obj.totall,type:result2.type});
+		// if (results != undefined) {
+			Promise.all(results.map(function(obj){
+				return new Promise(function(resolve, reject) {
+					UserInfo.findOne({'id': obj.uid}, function(error, result2){
+						resolve({name:!!result2 ? result2.name : '', bet:obj.totall,type:result2.type});
+					})
 				})
-			})
-		}))
-		.then(function(result){
-			io.listTop = result;
-		});
+			}))
+			.then(function(result){
+				io.listTop = result;
+			});
+		// }
 	});
 };
 let init = function(obj){
