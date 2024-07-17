@@ -81,7 +81,7 @@ let botchat = function(){
 }
 let GetTop = function(){
 	TaiXiu_User.find({'totall':{$gt:0}}, 'totall uid', {sort:{totall:-1}, limit:10}, function(err, results) {
-		// if (results != undefined) {
+		if (results != undefined) {
 			Promise.all(results.map(function(obj){
 				return new Promise(function(resolve, reject) {
 					UserInfo.findOne({'id': obj.uid}, function(error, result2){
@@ -92,7 +92,7 @@ let GetTop = function(){
 			.then(function(result){
 				io.listTop = result;
 			});
-		// }
+		}
 	});
 };
 let init = function(obj){
@@ -665,6 +665,7 @@ let playGame = function(){
 		}
 		HU_game.findOne({game:'taixiumd5', type:1}, 'hutx', function(err, datahu){
 				var tienhu = datahu.hutx;
+				tienhu = datahu.hutx ? datahu != undefined : 0;
 				let home;
 			home = {taixiu: {hutx:{monney:tienhu}}};
            // home = {hutxmain: {monney:tienhu}};
