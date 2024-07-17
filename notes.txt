@@ -1,7 +1,8 @@
 database UI: https://cloud.mongodb.com/v2/66967d46e777d20c9c9bbe40#/metrics/replicaSet/669696729ed1e10cd7db4ce3/explorer/test, google van.nn1604
 
-sử dụng nodejs 12.14.0
-
+- sử dụng nodejs 12.14.0
+- pass rdp: 1$q-ut-uq(d4k9MC%(n52*.!=Ag?BnN1
+- cho phép all kết nối trên mông atlas: https://cloud.mongodb.com/v2/66967d46e777d20c9c9bbe40#/security/network/accessList
 * trên ubuntu:
 - nên chạy trên root
 - npm install bcrypt
