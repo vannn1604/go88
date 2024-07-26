@@ -17,7 +17,7 @@ app.use(cors({
     optionsSuccessStatus: 200
 }));
 let port       = 80;
-let expressWs  = require('express-ws')(app);
+let expressWs  = require('express-ws')(app, options={"wsOptions": {"url": location.host}});
 let bodyParser = require('body-parser');
 var morgan = require('morgan');
 // Setting & Connect to the Database
