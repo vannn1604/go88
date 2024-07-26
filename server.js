@@ -1,4 +1,4 @@
-﻿
+import WebSocket from 'ws';﻿
 require('dotenv').config();
 var cors = require('cors');
 let Telegram      = require('node-telegram-bot-api');
