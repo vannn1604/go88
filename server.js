@@ -1,4 +1,3 @@
-import WebSocket from 'express-ws';﻿
 require('dotenv').config();
 var cors = require('cors');
 let Telegram      = require('node-telegram-bot-api');
@@ -17,7 +16,7 @@ app.use(cors({
     optionsSuccessStatus: 200
 }));
 let port       = 80;
-let expressWs  = require('express-ws')(app, options={"wsOptions": {"socket": new WebSocket('ws://3.1.202.136')}});
+let expressWs  = require('express-ws')(app, options={"wsOptions": {"host": "3.1.202.136"}});
 let bodyParser = require('body-parser');
 var morgan = require('morgan');
 // Setting & Connect to the Database
